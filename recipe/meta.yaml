@@ -1,5 +1,5 @@
 {% set name = "pytest-raises" %}
-{% set version = "0.10" %}
+{% set version = "0.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4710a8921b0b7425cd2073d696862ecf99922ef522e681cc63a52008112d63d9
+  sha256: f64a4dbcb5f89c100670fe83d87a5cd9d956586db461c5c628f7eb94b749c90b
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -32,7 +32,7 @@ about:
   license_family: MIT
   license_file: LICENSE.txt
 
-  summary: 'An implementation of pytest.raises as a pytest.mark fixture'
+  summary: An implementation of pytest.raises as a pytest.mark fixture
   description: |
     Adds functionality for marking tests with a `pytest.mark.raises`
     fixture, which functions similarly to using `with pytest.raises`
